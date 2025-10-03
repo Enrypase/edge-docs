@@ -1,0 +1,31 @@
+name: Trigger Website Rebuild
+
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - "content/**"
+  workflow_dispatch:
+
+jobs:
+  trigger-rebuild:
+    name: Notify Website Repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger website rebuild
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.WEBSITE_REBUILD_TOKEN }}
+          repository: Marketized/edge-nextjs-website
+          event-type: docs-updated
+          client-payload: |
+            {
+              "docs_repo": "${{ github.repository }}",
+              "docs_commit": "${{ github.sha }}",
+              "docs_commit_message": "${{ github.event.head_commit.message }}",
+              "docs_author": "${{ github.event.head_commit.author.name }}",
+              "docs_url": "${{ github.event.head_commit.url }}"
+            }

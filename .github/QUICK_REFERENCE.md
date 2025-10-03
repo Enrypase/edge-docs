@@ -29,9 +29,9 @@ scripts/
 
 - [ ] **Create GitHub Personal Access Token** (with `repo` and `workflow` scopes)
 - [ ] **Add `WEBSITE_REBUILD_TOKEN` secret** to edge-docs repository
-- [ ] **Add `NEXT_PUBLIC_DIRECTUS_URL` secret** to edge-nextjs-website (if using Directus)
-- [ ] **Add `DIRECTUS_BOT_SECRET` secret** to edge-nextjs-website (if using Directus)
-- [ ] **Add Vercel secrets** to edge-nextjs-website (if auto-deploying to Vercel)
+- [ ] **Add `NEXT_PUBLIC_DIRECTUS_URL` secret** to edge-test repository (if using Directus)
+- [ ] **Add `DIRECTUS_BOT_SECRET` secret** to edge-test repository (if using Directus)
+- [ ] **Add Vercel secrets** to edge-test repository (if auto-deploying to Vercel)
 
 ## 🚀 How to Use
 
@@ -62,7 +62,7 @@ Go to the GitHub Actions page and manually trigger the workflow:
 ### Check Workflow Status
 
 - **Docs trigger**: https://github.com/Enrypase/edge-docs/actions
-- **Website rebuild**: https://github.com/Marketized/edge-nextjs-website/actions
+- **Website rebuild**: https://github.com/Enrypase/edge-test/actions
 
 ### Workflow Statuses
 
@@ -107,10 +107,11 @@ yarn build
 - GitHub: https://github.com/Enrypase/edge-docs
 - Trigger: Changes to `content/**` on `master` branch
 
-### Website Repository (edge-nextjs-website)
+### Website Repository (edge-test)
 
 - Local: `/home/enrypase/Desktop/Work/Marketized/Edge/edge-nextjs-website`
-- GitHub: https://github.com/Marketized/edge-nextjs-website
+- GitHub: https://github.com/Enrypase/edge-test
+- Branch: `fumadocs`
 - Receives: `docs-updated` repository_dispatch events
 
 ## 🔗 Useful Links

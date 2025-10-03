@@ -45,9 +45,9 @@ You need to create a GitHub Personal Access Token that allows the docs repositor
 
 ### 3. Configure Directus Environment Variables (Required for CMS sync)
 
-If you're using Directus CMS for documentation, add these secrets to the **website repository** (Marketized/edge-nextjs-website):
+If you're using Directus CMS for documentation, add these secrets to the **website repository** (Enrypase/edge-test):
 
-1. Go to: https://github.com/Marketized/edge-nextjs-website/settings/secrets/actions
+1. Go to: https://github.com/Enrypase/edge-test/settings/secrets/actions
 
 2. Add the following secrets:
 
@@ -62,9 +62,9 @@ If you're using Directus CMS for documentation, add these secrets to the **websi
 
 ### 4. Optional: Configure Vercel Deployment (if using Vercel)
 
-If the website is deployed on Vercel and you want automatic deployments, add these additional secrets to the **website repository** (Marketized/edge-nextjs-website):
+If the website is deployed on Vercel and you want automatic deployments, add these additional secrets to the **website repository** (Enrypase/edge-test):
 
-1. Go to: https://github.com/Marketized/edge-nextjs-website/settings/secrets/actions
+1. Go to: https://github.com/Enrypase/edge-test/settings/secrets/actions
 
 2. Add the following secrets:
 
@@ -92,7 +92,7 @@ If the website is deployed on Vercel and you want automatic deployments, add the
 1. The website repository receives the `docs-updated` event
 2. The workflow `.github/workflows/rebuild-on-docs-change.yml` runs
 3. It performs the following steps:
-   - Checks out the website code
+   - Checks out the website code (from the `fumadocs` branch)
    - Installs dependencies
    - Runs `yarn sync-github-docs` to pull the latest documentation from the edge-docs GitHub repository
    - Runs `yarn sync-docs` to pull documentation from Directus CMS (if configured)
@@ -139,7 +139,7 @@ git push origin master
 Then check:
 
 - Docs repository actions: https://github.com/Enrypase/edge-docs/actions
-- Website repository actions: https://github.com/Marketized/edge-nextjs-website/actions
+- Website repository actions: https://github.com/Enrypase/edge-test/actions
 
 ## Workflow Files
 
@@ -149,7 +149,7 @@ Then check:
 - **Purpose**: Detects changes and sends notification to website repo
 - **Triggers on**: Push to `master`/`main` branch (only `content/` directory changes)
 
-### Website Repository
+### Website Repository (edge-test)
 
 - **File**: `.github/workflows/rebuild-on-docs-change.yml`
 - **Purpose**: Receives notification and rebuilds the website

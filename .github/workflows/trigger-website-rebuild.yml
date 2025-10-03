@@ -19,7 +19,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.WEBSITE_REBUILD_TOKEN }}
-          repository: Marketized/edge-nextjs-website
+          repository: Enrypase/edge-test
           event-type: docs-updated
           client-payload: |
             {

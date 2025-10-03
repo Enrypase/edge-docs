@@ -18,15 +18,15 @@ Automatically triggers when:
 - Manual workflow dispatch
 
 **What it does:**
-Sends a `repository_dispatch` event to the `Marketized/edge-nextjs-website` repository with metadata about the commit that triggered it.
+Sends a `repository_dispatch` event to the `Enrypase/edge-test` repository with metadata about the commit that triggered it.
 
 ## 🚀 Quick Start
 
 1. Follow the [Setup Guide](./SETUP_GUIDE.md) to configure secrets
 2. Push changes to the `content/` directory
-3. Watch the automatic rebuild at https://github.com/Marketized/edge-nextjs-website/actions
+3. Watch the automatic rebuild at https://github.com/Enrypase/edge-test/actions
 
 ## 🔗 Related
 
-- Website repository: https://github.com/Marketized/edge-nextjs-website
-- Website rebuild workflow: `Marketized/edge-nextjs-website/.github/workflows/rebuild-on-docs-change.yml`
+- Website repository: https://github.com/Enrypase/edge-test
+- Website rebuild workflow: `Enrypase/edge-test/.github/workflows/rebuild-on-docs-change.yml`
